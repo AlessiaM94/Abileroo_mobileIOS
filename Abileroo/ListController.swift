@@ -17,7 +17,7 @@ class ListController: UIViewController{
     
     var data: [CommercialActivity] = [
         CommercialActivity(name: "La Bottega del panino", address: "Viale la Plaia, 38, 09123 Cagliari CA", description: "Presenti sul mercato dal 1998, abbiamo saputo conquistare la fiducia di una clientela sempre più ampia, grazie alla qualità dei nostri snack, da sempre preparati con materie prime selezionate.", imageActivity: UIImage(imageLiteralResourceName: "La bottega del panino.jpeg")),
-        CommercialActivity(name: "Bar Pasticceria La Dolce Vita", address: "Via S. Benedetto, 19, 09129 Cagliari CA", description: "Questa pasticceria può venire consigliata per i suoi ineguagliabili cantucci, cornetti e cheesecake. È ora di degustare un attimo cordiale.", imageActivity: UIImage(imageLiteralResourceName: "La dolce vita.jpeg")),
+        CommercialActivity(name: "Bar Pasticceria La Dolce Vita", address: "Via S. Benedetto, 19, 09129 Cagliari CA", description: "Questa pasticceria può venire consigliata per i suoi ineguagliabili cantucci, cornetti e cheesecake. È ora di degustare un attimo cordiale!", imageActivity: UIImage(imageLiteralResourceName: "La dolce vita.jpeg")),
         CommercialActivity(name: "Pulcinella Gastrò", address: "Via Santa Maria Chiara, 150, 09134 Cagliari CA", description: "Pulcinella Gastrò vi accompagna durante il giorno con le sue specialità: gastronomia, bisteccheria, friggitoria, pizzeria, aperitivi, sushi, pasti veloci e ...", imageActivity: UIImage(imageLiteralResourceName: "Pulcinella-gastro.png"))
     ]
  
