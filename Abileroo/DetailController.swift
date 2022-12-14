@@ -9,18 +9,20 @@ import UIKit
 
 class DetailController: UIViewController {
     
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var TableProdotti: UITableView!
     
     @IBOutlet weak var addressView: UILabel!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var descriptionLabel: UITextView!
+ 
+    @IBOutlet weak var desriptionLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-    }
     
+    }
+
+   
     struct Prodotti {
         let nameP: String
         let prezzo: Double
