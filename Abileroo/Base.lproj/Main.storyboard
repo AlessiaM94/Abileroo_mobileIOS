@@ -249,7 +249,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="TabBar" destination="jtK-jI-9SQ" id="oWY-rx-MYb"/>
+                        <outlet property="TabBar" destination="jtK-jI-9SQ" id="t8S-if-JAW"/>
                         <outlet property="TableProdotti" destination="S7a-2w-RdZ" id="Ry3-sD-ikU"/>
                         <outlet property="addressView" destination="wkh-rA-Fmq" id="mFw-Pg-KvR"/>
                         <outlet property="desriptionLabel" destination="GBN-Ak-utt" id="ufo-Ud-AQm"/>

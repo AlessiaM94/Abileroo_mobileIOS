@@ -9,6 +9,7 @@ import UIKit
 
 class DetailController: UIViewController {
     
+    @IBOutlet weak var TabBar: UINavigationItem!
     @IBOutlet weak var TableProdotti: UITableView!
     
     @IBOutlet weak var addressView: UILabel!
