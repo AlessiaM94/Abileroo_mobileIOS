@@ -15,9 +15,11 @@
 		4D27B94A293DFE7C000DDD39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D27B948293DFE7C000DDD39 /* LaunchScreen.storyboard */; };
 		4D27B955293DFE7C000DDD39 /* AbilerooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27B954293DFE7C000DDD39 /* AbilerooTests.swift */; };
 		4D27B960293DFE7C000DDD39 /* AbilerooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27B95F293DFE7C000DDD39 /* AbilerooUITests.swift */; };
+		4D41F656294CA98C00102196 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F655294CA98C00102196 /* ProfileController.swift */; };
 		4D572D99293F62E4005761D5 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572D98293F62E4005761D5 /* ListController.swift */; };
 		4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572D9D293F64E2005761D5 /* ActivityCell.swift */; };
 		4D572DBF293F8509005761D5 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572DBE293F8509005761D5 /* DetailController.swift */; };
+		4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB97117294B5EBA002FC89E /* ActCellProd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +54,11 @@
 		4D27B95B293DFE7C000DDD39 /* AbilerooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbilerooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D27B95F293DFE7C000DDD39 /* AbilerooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilerooUITests.swift; sourceTree = "<group>"; };
 		4D27B961293DFE7C000DDD39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D41F655294CA98C00102196 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		4D572D98293F62E4005761D5 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		4D572D9D293F64E2005761D5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		4D572DBE293F8509005761D5 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		4DB97117294B5EBA002FC89E /* ActCellProd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActCellProd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +114,10 @@
 				4D27B941293DFE7A000DDD39 /* ViewController.swift */,
 				4D27B943293DFE7A000DDD39 /* Main.storyboard */,
 				4D572D98293F62E4005761D5 /* ListController.swift */,
+				4D41F655294CA98C00102196 /* ProfileController.swift */,
 				4D572DBE293F8509005761D5 /* DetailController.swift */,
 				4D572D9D293F64E2005761D5 /* ActivityCell.swift */,
+				4DB97117294B5EBA002FC89E /* ActCellProd.swift */,
 				4D27B946293DFE7C000DDD39 /* Assets.xcassets */,
 				4D27B948293DFE7C000DDD39 /* LaunchScreen.storyboard */,
 				4D27B94B293DFE7C000DDD39 /* Info.plist */,
@@ -272,7 +278,9 @@
 				4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */,
 				4D27B940293DFE7A000DDD39 /* SceneDelegate.swift in Sources */,
 				4D572DBF293F8509005761D5 /* DetailController.swift in Sources */,
+				4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */,
 				4D572D99293F62E4005761D5 /* ListController.swift in Sources */,
+				4D41F656294CA98C00102196 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

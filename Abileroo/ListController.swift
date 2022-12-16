@@ -9,6 +9,7 @@ import UIKit
 
 class ListController: UIViewController{
     
+    @IBOutlet weak var Botton: UIButton!
     @IBOutlet weak var tableview: UITableView!
     
     @IBOutlet weak var image: UITableView!
@@ -39,14 +40,16 @@ extension ListController: UISearchBarDelegate{
 }
 
 extension ListController: UITableViewDelegate, UITableViewDataSource{
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
        let detail = self.storyboard?.instantiateViewController(identifier: "detailController") as! DetailController
        detail.loadView()
-        detail.image.image = data[indexPath.row].imageActivity
+       detail.image.image = data[indexPath.row].imageActivity
        detail.desriptionLabel.text = data[indexPath.row].description
        self.navigationController?.pushViewController(detail, animated: true)
        detail.addressView.text = data[indexPath.row].address
+       detail.titleAc.text = data[indexPath.row].name
 
    }
     
@@ -60,7 +63,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ActivityCell {
-                   let item = data[indexPath.row]
+                  let item = data[indexPath.row]
                   cell.titleLabel.text = item.name
                   cell.descriptionLabel.text = item.address
                   cell.profileImage.image = item.imageActivity
@@ -69,7 +72,12 @@ extension ListController: UITableViewDelegate, UITableViewDataSource{
                
                return UITableViewCell()
    }
+    
+
+    
 }
+
+
 
 struct CommercialActivity {
     let name: String
