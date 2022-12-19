@@ -8,9 +8,10 @@
 import UIKit
 
 class ActCellProd: UITableViewCell {
-    @IBOutlet weak var NameProd: UILabel!
-    @IBOutlet weak var Prezzo: UILabel!
-    @IBOutlet weak var descrProd: UILabel!
+    @IBOutlet weak var NomProd: UILabel!
+    @IBOutlet weak var DescProd: UILabel!
+    
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
