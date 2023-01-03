@@ -14,10 +14,10 @@
             filePath = "Abileroo/ListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "ListController"
-            landmarkType = "21">
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,10 +30,106 @@
             filePath = "Abileroo/ListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07FB8F65-0FA2-4605-89C3-35A25DA8C635"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Abileroo/ListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "07FB8F65-0FA2-4605-89C3-35A25DA8C635 - 7d1cad6393258701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Abileroo.ListController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Abileroo.ListController"
+                  moduleName = "Abileroo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abinsula/Desktop/ALESSIA/Fake%20Deliveroo/Abileroo_mobileIOS/Abileroo/ListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "257">
+               </Location>
+               <Location
+                  uuid = "07FB8F65-0FA2-4605-89C3-35A25DA8C635 - 7161ece8585b8f97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Abileroo.ListController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Abileroo.ListController&gt;"
+                  moduleName = "Abileroo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abinsula/Desktop/ALESSIA/Fake%20Deliveroo/Abileroo_mobileIOS/Abileroo/ListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "198">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4ADB211C-12E5-4FF7-9530-A633EDD22ECC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Abileroo/ListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "4ADB211C-12E5-4FF7-9530-A633EDD22ECC - 7d1cad6393258701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Abileroo.ListController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Abileroo.ListController"
+                  moduleName = "Abileroo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abinsula/Desktop/ALESSIA/Fake%20Deliveroo/Abileroo_mobileIOS/Abileroo/ListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "257">
+               </Location>
+               <Location
+                  uuid = "4ADB211C-12E5-4FF7-9530-A633EDD22ECC - 7161ece8585b8f97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Abileroo.ListController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Abileroo.ListController&gt;"
+                  moduleName = "Abileroo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abinsula/Desktop/ALESSIA/Fake%20Deliveroo/Abileroo_mobileIOS/Abileroo/ListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "198">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

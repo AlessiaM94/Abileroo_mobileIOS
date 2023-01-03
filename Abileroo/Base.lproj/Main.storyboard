@@ -80,6 +80,9 @@
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.5740767121" green="0.37053716180000001" blue="0.35130918030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="vaiAlDettaglio:" destination="cwc-gh-65b" eventType="touchUpInside" id="fsZ-fP-IBQ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,6 +120,11 @@
                                     <constraint firstAttribute="height" constant="4" id="Nyh-7u-pSY"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Scrivi il nome dell'attività" translatesAutoresizingMaskIntoConstraints="NO" id="VOd-kV-zT2">
+                                <rect key="frame" x="0.0" y="95" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1OO-mK-U4c"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,14 +142,16 @@
                         <barButtonItem key="rightBarButtonItem" title="Profilo" image="person.fill" catalog="system" id="0Vl-i1-hC8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="cNI-o5-x5a" kind="show" id="BqW-pH-UED"/>
+                                <segue destination="cNI-o5-x5a" kind="show" identifier="login" id="BqW-pH-UED"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="image" destination="kbI-wd-xWE" id="U7U-1I-E2K"/>
+                        <outlet property="ricerca" destination="VOd-kV-zT2" id="ZCp-n2-76m"/>
                         <outlet property="tableview" destination="kbI-wd-xWE" id="EZ3-Y3-ahe"/>
+                        <segue destination="zpA-pw-Ald" kind="show" identifier="Detail" id="JlV-tk-3aO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXy-QQ-dbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -467,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPh-ex-woB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5652173913045" y="-178.125"/>
+            <point key="canvasLocation" x="1926" y="-160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lts-sW-Fnw">

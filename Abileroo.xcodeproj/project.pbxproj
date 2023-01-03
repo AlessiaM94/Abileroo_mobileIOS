@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572D9D293F64E2005761D5 /* ActivityCell.swift */; };
 		4D572DBF293F8509005761D5 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572DBE293F8509005761D5 /* DetailController.swift */; };
 		4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB97117294B5EBA002FC89E /* ActCellProd.swift */; };
+		9B918C674697D6CC94F6FCA3 /* Pods_Abileroo_AbilerooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503DA0FE7E996D407877DDD8 /* Pods_Abileroo_AbilerooUITests.framework */; };
+		AD3E01882B16E7390657B516 /* Pods_Abileroo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3A3EC872F0A2793456B804 /* Pods_Abileroo.framework */; };
+		EA98420A1E57255436602A70 /* Pods_AbilerooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C52F645541EB0510330C80 /* Pods_AbilerooTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		119A24670E9B97B7AA7E6A37 /* Pods-Abileroo-AbilerooUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abileroo-AbilerooUITests.debug.xcconfig"; path = "Target Support Files/Pods-Abileroo-AbilerooUITests/Pods-Abileroo-AbilerooUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A3A3EC872F0A2793456B804 /* Pods_Abileroo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abileroo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D27B93A293DFE7A000DDD39 /* Abileroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abileroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D27B93D293DFE7A000DDD39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D27B93F293DFE7A000DDD39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +64,13 @@
 		4D572D9D293F64E2005761D5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		4D572DBE293F8509005761D5 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		4DB97117294B5EBA002FC89E /* ActCellProd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActCellProd.swift; sourceTree = "<group>"; };
+		503DA0FE7E996D407877DDD8 /* Pods_Abileroo_AbilerooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abileroo_AbilerooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C52F645541EB0510330C80 /* Pods_AbilerooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbilerooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81509E0A166829F882502741 /* Pods-Abileroo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abileroo.debug.xcconfig"; path = "Target Support Files/Pods-Abileroo/Pods-Abileroo.debug.xcconfig"; sourceTree = "<group>"; };
+		8251049580E0098A2E12E6FB /* Pods-AbilerooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbilerooTests.release.xcconfig"; path = "Target Support Files/Pods-AbilerooTests/Pods-AbilerooTests.release.xcconfig"; sourceTree = "<group>"; };
+		C904BC5E3EB021B23D5CEA77 /* Pods-AbilerooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbilerooTests.debug.xcconfig"; path = "Target Support Files/Pods-AbilerooTests/Pods-AbilerooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBED901C646C9997A90ACF69 /* Pods-Abileroo-AbilerooUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abileroo-AbilerooUITests.release.xcconfig"; path = "Target Support Files/Pods-Abileroo-AbilerooUITests/Pods-Abileroo-AbilerooUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC1D1721630BCBE67D1D194D /* Pods-Abileroo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abileroo.release.xcconfig"; path = "Target Support Files/Pods-Abileroo/Pods-Abileroo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3E01882B16E7390657B516 /* Pods_Abileroo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA98420A1E57255436602A70 /* Pods_AbilerooTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B918C674697D6CC94F6FCA3 /* Pods_Abileroo_AbilerooUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135833CCC1C393D3377394C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81509E0A166829F882502741 /* Pods-Abileroo.debug.xcconfig */,
+				DC1D1721630BCBE67D1D194D /* Pods-Abileroo.release.xcconfig */,
+				119A24670E9B97B7AA7E6A37 /* Pods-Abileroo-AbilerooUITests.debug.xcconfig */,
+				CBED901C646C9997A90ACF69 /* Pods-Abileroo-AbilerooUITests.release.xcconfig */,
+				C904BC5E3EB021B23D5CEA77 /* Pods-AbilerooTests.debug.xcconfig */,
+				8251049580E0098A2E12E6FB /* Pods-AbilerooTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2D9400F0B1B7A4F96ED4628D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A3A3EC872F0A2793456B804 /* Pods_Abileroo.framework */,
+				503DA0FE7E996D407877DDD8 /* Pods_Abileroo_AbilerooUITests.framework */,
+				68C52F645541EB0510330C80 /* Pods_AbilerooTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D27B931293DFE7A000DDD39 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +131,8 @@
 				4D27B953293DFE7C000DDD39 /* AbilerooTests */,
 				4D27B95E293DFE7C000DDD39 /* AbilerooUITests */,
 				4D27B93B293DFE7A000DDD39 /* Products */,
+				135833CCC1C393D3377394C6 /* Pods */,
+				2D9400F0B1B7A4F96ED4628D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D27B964293DFE7C000DDD39 /* Build configuration list for PBXNativeTarget "Abileroo" */;
 			buildPhases = (
+				83D76190561A9CFF1EFEA84F /* [CP] Check Pods Manifest.lock */,
 				4D27B936293DFE7A000DDD39 /* Sources */,
 				4D27B937293DFE7A000DDD39 /* Frameworks */,
 				4D27B938293DFE7A000DDD39 /* Resources */,
+				057BF4C846D00B11BACDF89F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D27B967293DFE7C000DDD39 /* Build configuration list for PBXNativeTarget "AbilerooTests" */;
 			buildPhases = (
+				ADFEAB839DCDA9A32839B0D9 /* [CP] Check Pods Manifest.lock */,
 				4D27B94C293DFE7C000DDD39 /* Sources */,
 				4D27B94D293DFE7C000DDD39 /* Frameworks */,
 				4D27B94E293DFE7C000DDD39 /* Resources */,
@@ -185,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D27B96A293DFE7C000DDD39 /* Build configuration list for PBXNativeTarget "AbilerooUITests" */;
 			buildPhases = (
+				C630AFEFAD76F76BA694A18F /* [CP] Check Pods Manifest.lock */,
 				4D27B957293DFE7C000DDD39 /* Sources */,
 				4D27B958293DFE7C000DDD39 /* Frameworks */,
 				4D27B959293DFE7C000DDD39 /* Resources */,
+				11AA38677F93A6C6D267261E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,6 +312,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		057BF4C846D00B11BACDF89F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abileroo/Pods-Abileroo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abileroo/Pods-Abileroo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abileroo/Pods-Abileroo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11AA38677F93A6C6D267261E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abileroo-AbilerooUITests/Pods-Abileroo-AbilerooUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abileroo-AbilerooUITests/Pods-Abileroo-AbilerooUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abileroo-AbilerooUITests/Pods-Abileroo-AbilerooUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83D76190561A9CFF1EFEA84F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Abileroo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADFEAB839DCDA9A32839B0D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AbilerooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C630AFEFAD76F76BA694A18F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Abileroo-AbilerooUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D27B936293DFE7A000DDD39 /* Sources */ = {
@@ -453,6 +601,7 @@
 		};
 		4D27B965293DFE7C000DDD39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81509E0A166829F882502741 /* Pods-Abileroo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +620,7 @@
 		};
 		4D27B966293DFE7C000DDD39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC1D1721630BCBE67D1D194D /* Pods-Abileroo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,6 +639,7 @@
 		};
 		4D27B968293DFE7C000DDD39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C904BC5E3EB021B23D5CEA77 /* Pods-AbilerooTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +661,7 @@
 		};
 		4D27B969293DFE7C000DDD39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8251049580E0098A2E12E6FB /* Pods-AbilerooTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -531,6 +683,7 @@
 		};
 		4D27B96B293DFE7C000DDD39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119A24670E9B97B7AA7E6A37 /* Pods-Abileroo-AbilerooUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +703,7 @@
 		};
 		4D27B96C293DFE7C000DDD39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBED901C646C9997A90ACF69 /* Pods-Abileroo-AbilerooUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
