@@ -21,6 +21,10 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var image: UITableView!
     
+    var filtro = Array<String>()
+    var searching: Bool = false
+    var text = ""
+    var list: [CommercialActivity] = []
     
     
     
@@ -29,39 +33,74 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.performSegue(withIdentifier: "Detail", sender: nil)
     }
     
-    var data = [CommercialActivity]()
     
+    var data = [CommercialActivity]()
+    var filteredData: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        ListController.sharedInstance.fetchAPIData()
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.reloadData()
-        
+        ricerca.delegate = self
+        fetchAPIData { [weak self] (result) in
+            switch result {
+            case .success(let activities):
+                self?.data = activities
+                self?.tableview.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+    
+    
+    
 }
 
+
 extension  ListController {
-        static let sharedInstance = ListController()
-           func fetchAPIData() {
+     
+    func fetchAPIData(completion: @escaping (Result<[CommercialActivity], Error>) -> Void)  {
               let url = "https://enrobax.pythonanywhere.com/api/shops/";
               AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil)
                 .response{ resp in
                     switch resp.result{
                       case .success(let data):
-                        do{
-                          let jsonData = try JSONDecoder().decode([CommercialActivity].self, from: data!)
-                          print(jsonData)
-                       } catch {
-                          print(error)
-                       }
-                     case .failure(let error):
-                       print(String(describing: error))
+                        
+                        if let jsonData = try? JSONDecoder().decode([CommercialActivity].self, from: data!) {
+                            
+                                completion(.success(jsonData))
+                            
+                        }
+                        
+                        else {
+                            let error = NSError(domain: "", code: 101, userInfo: [NSLocalizedDescriptionKey: "Erroreee"])
+                            completion(.failure(error))
+                        }
+                      
+                    
+                    case .failure(let error):
+                        
+                            completion(.failure(error))
+                        
                      }
-                }
-           }
+        }.resume()
+    }
     
 }
+
+
+
+extension String {
+    func convImmagine() -> UIImage? {
+        if let url = URL(string: self){
+            if let imageData = try? Data(contentsOf: url) {
+                return UIImage(data: imageData)
+            }
+        }
+         return nil
+    }
+}
+
 
  func prepare(for segue: UIStoryboardSegue, sender: Any?){
     guard let identifier = segue.identifier else  {
@@ -81,6 +120,9 @@ extension  ListController {
           }
    }
 
+
+
+
 extension ListController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         print("Sto")
@@ -91,11 +133,36 @@ extension ListController: UISearchResultsUpdating{
 
 extension ListController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+       
+        if searchText.isEmpty {
+                print("search Text is nil")
+                searching = false
+            } else {
+                searching = true
+                
+            }
+        tableview.reloadData()
+        
+      
+        
+        
+        /* if(searchText.isEmpty){
+                 searching = false
+                 
+                }else{
+                    searching = true
+                    text = searchText
+                }
+                tableview.reloadData()*/
+        
+            
     }
+    
 }
 
 extension ListController {
+    
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -110,15 +177,33 @@ extension ListController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return data.count
+        return data.count
     }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ActivityCell {
-            let item = data[indexPath.row]
-            cell1.titleLabel?.text = item.name
-            cell1.descriptionLabel?.text = item.address
-            return cell1
+            
+            if(searching){
+                for dato in data {
+                    if(dato.name!.contains(text)){
+                        list.append(dato)}
+                    }
+                print(list.count)
+                
+            }else{
+                let item = data[indexPath.row]
+                cell1.titleLabel?.text = item.name
+                cell1.descriptionLabel?.text = item.address
+                cell1.profileImage?.image = item.image?.convImmagine()
+                return cell1
+                
+            }
+                
+            
+            
         }
         
         return UITableViewCell()
@@ -135,7 +220,7 @@ struct CommercialActivity: Codable {
     let name: String?
     let address: String?
     let description: String?
-    let image: URL?
+    let image: String?
     let products: [Products]
     enum CodingKeys : String , CodingKey {
         case id
@@ -148,13 +233,13 @@ struct CommercialActivity: Codable {
 }
 
 struct Products: Codable {
-    let availableAmount: Int
-    let description: String
-    let id: Int
-    let name: String
-    let price: Double
-    let productImage: URL?
-    let shop: Int
+    let availableAmount: Int?
+    let description: String?
+    let id: Int?
+    let name: String?
+    let price: Double?
+    let productImage: String?
+    let shop: Int?
     enum CodingKeys : String , CodingKey {
         case availableAmount = "available_amount"
         case description

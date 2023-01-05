@@ -23,24 +23,20 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var desriptionLabel: UILabel!
     
     var stringaDiPassaggio: String = String()
-    //var commercialActivity: CommercialActivity?
-    
-    var data1: [Prodotti] =
-        [
-            Prodotti(nameP: "Pane", desProd: "Pane di alta qualità"),
-            Prodotti(nameP: "Ciliegie", desProd: "Ciliegie di villacidro"),
-        ]
-    
+    var data1: CommercialActivity?
+    var prodotti = [Products]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.dataSource = self
         tableview.delegate = self
-       
-        //desriptionLabel.text = self.commercialActivity?.description
-        //addressView.text = commercialActivity?.address
-        //titleAc.text = self.commercialActivity?.name
+        desriptionLabel.text = self.data1?.description
+        addressView.text = self.data1?.address
+        titleAc.text = self.data1?.name
+        image.image = data1?.image?.convImmagine()
+        self.tableview.reloadData()
     }
+    
     
     
     
@@ -49,24 +45,22 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data1.count
+        prodotti.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd {
-            let item2 = data1[indexPath.row]
-            cell2.NomProd.text = item2.nameP
-            cell2.DescProd.text = item2.desProd
+            let item2 = prodotti[indexPath.row]
+            cell2.NomProd.text = item2.name
+            cell2.DescProd.text = item2.description
             return cell2
         }
         
         return UITableViewCell()
     }
 
-    struct Prodotti {
-        let nameP: String
-        let desProd: String
-    }
+    
     
     
     
