@@ -16,6 +16,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet var titleAc: UILabel!
     @IBOutlet weak var desriptionLabel: UILabel!
     
+    @IBOutlet weak var likeButton: UIBarButtonItem!
     var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
     
@@ -26,8 +27,8 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         tableview.dataSource = self
         tableview.delegate = self
         desriptionLabel.text = self.data1?.description
-         addressView.text = self.data1?.address
-         titleAc.text = self.data1?.name
+        addressView.text = self.data1?.address
+        titleAc.text = self.data1?.name
         image.image = self.data1?.image?.convImmagine()
         self.tableview.reloadData()
     }

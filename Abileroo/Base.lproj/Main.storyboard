@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,7 +135,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Abileroo" id="Yc8-xT-PU5">
-                        <barButtonItem key="rightBarButtonItem" title="Profilo" image="barButtonItem:0Vl-i1-hC8:image" catalog="system" id="0Vl-i1-hC8">
+                        <barButtonItem key="rightBarButtonItem" title="Profilo" image="barButtonItem:0Vl-i1-hC8:image" id="0Vl-i1-hC8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -388,6 +389,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mos-8c-U2c">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="xhG-eo-wGb">
+                            <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fM7-yF-O1e">
+                                <rect key="frame" x="302" y="7" width="75" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="heart.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5883235335" green="0.39123693110000002" blue="0.38498681779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <connections>
                             <outlet property="titleView" destination="Vhs-lr-Zrx" id="8E6-K4-3ea"/>
                         </connections>
@@ -398,6 +415,7 @@
                         <outlet property="addressView" destination="wkh-rA-Fmq" id="mFw-Pg-KvR"/>
                         <outlet property="desriptionLabel" destination="GBN-Ak-utt" id="ufo-Ud-AQm"/>
                         <outlet property="image" destination="xq3-dy-TwW" id="5OI-Kp-yCG"/>
+                        <outlet property="likeButton" destination="xhG-eo-wGb" id="kB5-bX-HYu"/>
                         <outlet property="tableview" destination="IPR-cs-cjM" id="uoH-Rq-1Gh"/>
                         <outlet property="titleAc" destination="Vhs-lr-Zrx" id="Cj1-J8-hng"/>
                     </connections>
@@ -431,7 +449,7 @@
     <resources>
         <image name="Abileroo-1" width="800" height="600"/>
         <image name="La bottega del panino" width="227" height="222"/>
-        <image name="barButtonItem:0Vl-i1-hC8:image" catalog="system" width="128" height="120">
+        <image name="barButtonItem:0Vl-i1-hC8:image" width="128" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBscIRkmKisyNThCSktPUlUkbnVsbNcNDg8QERITFBUW
@@ -16973,6 +16991,7 @@ AAAAAAAPIUQ
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="icon-2073973_960_720" width="515" height="720"/>
         <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
         <systemColor name="labelColor">
