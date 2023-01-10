@@ -7,14 +7,8 @@
 
 import UIKit
 
-
-
-
-
-
-
-
 class DetailController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var addressView: UILabel!
@@ -24,44 +18,38 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
-    var prodotti = [Products]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableview.dataSource = self
         tableview.delegate = self
         desriptionLabel.text = self.data1?.description
-        addressView.text = self.data1?.address
-        titleAc.text = self.data1?.name
-        image.image = data1?.image?.convImmagine()
+         addressView.text = self.data1?.address
+         titleAc.text = self.data1?.name
+        image.image = self.data1?.image?.convImmagine()
         self.tableview.reloadData()
     }
     
-    
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
+    func numberOfSections(in tableView: UITableView) -> Int {1}
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        prodotti.count
-        
+    return (data1?.products.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd {
-            let item2 = prodotti[indexPath.row]
-            cell2.NomProd.text = item2.name
-            cell2.DescProd.text = item2.description
+            let item2 = self.data1?.products
+            print(data1?.products as Any)
+            cell2.DescProd.text = item2?[0].description
+            cell2.NomProd.text = item2?[0].name
+            cell2.Prezzo.text = "Tot"
+            cell2.ImagePr.image = item2?[0].productImage?.convImmagine()
             return cell2
         }
-        
         return UITableViewCell()
     }
-
-    
-    
-    
-    
 }
+    
+

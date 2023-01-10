@@ -10,6 +10,8 @@ import UIKit
 class ActCellProd: UITableViewCell {
     @IBOutlet weak var NomProd: UILabel!
     @IBOutlet weak var DescProd: UILabel!
+    @IBOutlet weak var Prezzo: UILabel!
+    @IBOutlet weak var ImagePr: UIImageView!
     
     
     
