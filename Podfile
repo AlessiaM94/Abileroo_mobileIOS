@@ -7,6 +7,7 @@ target 'Abileroo' do
 
   # Pods for Abileroo
   pod 'Alamofire'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'AbilerooTests' do
     inherit! :search_paths
