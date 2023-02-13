@@ -30,9 +30,10 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         desriptionLabel.text = self.data1?.description
         addressView.text = self.data1?.address
         titleAc.text = self.data1?.name
-        image.image = self.data1?.image?.convImmagine()
+        image.sd_setImage(with: URL(string: data1?.image ?? ""))
         self.tableview.reloadData()
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {1}
     
@@ -47,11 +48,12 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
             cell2.DescProd.text = item2?[0].description
             cell2.NomProd.text = item2?[0].name
             cell2.Prezzo.text = "Tot"
-            cell2.ImagePr.image = item2?[0].productImage?.convImmagine()
+            cell2.ImagePr?.sd_setImage(with: URL(string: item2?[0].productImage ?? ""))
             return cell2
         }
         return UITableViewCell()
     }
 }
     
+
 

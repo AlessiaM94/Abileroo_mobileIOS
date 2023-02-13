@@ -15,12 +15,13 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var image: UITableView!
     
+    
     var filtro = Array<String>()
     var searching: Bool = false
     var text = ""
     var list = [CommercialActivity]()
-    
     var data = [CommercialActivity]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -31,12 +32,14 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
             case .success(let activities):
                 self?.data = activities
                 self?.tableview.reloadData()
+                
             case .failure(let error):
                 print(error)
             }
         }
     }
 }
+
 
 
 extension  ListController {
@@ -51,7 +54,6 @@ extension  ListController {
                         if let jsonData = try? JSONDecoder().decode([CommercialActivity].self, from: data!) {
                             
                                 completion(.success(jsonData))
-                            
                         }
                         
                         else {
@@ -69,19 +71,6 @@ extension  ListController {
     }
     
 }
-
-
-extension String {
-    func convImmagine() -> UIImage? {
-        if let url = URL(string: self){
-            if let imageData = try? Data(contentsOf: url) {
-                return UIImage(data: imageData)
-            }
-        }
-         return nil
-    }
-}
-
 
 extension ListController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
@@ -116,14 +105,15 @@ extension ListController {
         else{return data.count}
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ActivityCell {
+        let myIdentifier = "cell"
+        if let cell1 = tableView.dequeueReusableCell(withIdentifier: myIdentifier, for: indexPath as IndexPath) as? ActivityCell {
             if(searching ){
              
                 print(list)
                 let item = list[indexPath.row]
                 cell1.titleLabel?.text = item.name
                 cell1.descriptionLabel?.text = item.address
-                cell1.profileImage?.image = item.image?.convImmagine()
+                cell1.profileImage?.sd_setImage(with: URL(string: item.image ?? ""))
                 return cell1
                 
             }
@@ -131,7 +121,7 @@ extension ListController {
                 let item = data[indexPath.row]
                 cell1.titleLabel?.text = item.name
                 cell1.descriptionLabel?.text = item.address
-                cell1.profileImage?.image = item.image?.convImmagine()
+                cell1.profileImage?.sd_setImage(with: URL(string: item.image ?? ""))
                 return cell1
                 }
                 
@@ -198,5 +188,6 @@ struct Products: Codable {
     
     
 }
+
 
 
