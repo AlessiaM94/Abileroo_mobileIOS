@@ -22,5 +22,9 @@ class ActivityCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    func configure2(item: CommercialActivity) {
+        titleLabel.text = item.name
+        descriptionLabel.text = item.address
+        profileImage?.sd_setImage(with: URL(string: item.image ?? ""))
+    }
 }

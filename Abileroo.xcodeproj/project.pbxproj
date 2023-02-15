@@ -20,6 +20,8 @@
 		4D572D99293F62E4005761D5 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572D98293F62E4005761D5 /* ListController.swift */; };
 		4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572D9D293F64E2005761D5 /* ActivityCell.swift */; };
 		4D572DBF293F8509005761D5 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D572DBE293F8509005761D5 /* DetailController.swift */; };
+		4DACF02E299CFAE600F51C7E /* PreferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACF02D299CFAE500F51C7E /* PreferController.swift */; };
+		4DACF030299D20C800F51C7E /* ActivityPreferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACF02F299D20C800F51C7E /* ActivityPreferCell.swift */; };
 		4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB97117294B5EBA002FC89E /* ActCellProd.swift */; };
 		9B918C674697D6CC94F6FCA3 /* Pods_Abileroo_AbilerooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503DA0FE7E996D407877DDD8 /* Pods_Abileroo_AbilerooUITests.framework */; };
 		AD3E01882B16E7390657B516 /* Pods_Abileroo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3A3EC872F0A2793456B804 /* Pods_Abileroo.framework */; };
@@ -65,6 +67,8 @@
 		4D572D98293F62E4005761D5 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		4D572D9D293F64E2005761D5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		4D572DBE293F8509005761D5 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		4DACF02D299CFAE500F51C7E /* PreferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferController.swift; sourceTree = "<group>"; };
+		4DACF02F299D20C800F51C7E /* ActivityPreferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPreferCell.swift; sourceTree = "<group>"; };
 		4DB97117294B5EBA002FC89E /* ActCellProd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActCellProd.swift; sourceTree = "<group>"; };
 		503DA0FE7E996D407877DDD8 /* Pods_Abileroo_AbilerooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abileroo_AbilerooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C52F645541EB0510330C80 /* Pods_AbilerooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbilerooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,7 @@
 		4D27B93C293DFE7A000DDD39 /* Abileroo */ = {
 			isa = PBXGroup;
 			children = (
+				4DACF02C299CFABF00F51C7E /* PreferPage */,
 				4D51ED0D299BC05200D6802A /* Fonts */,
 				4D51ED0C299BA2A900D6802A /* DetailPage */,
 				4D51ED0B299BA1C600D6802A /* HomePage */,
@@ -208,6 +213,15 @@
 				4D51ED0E299BC08B00D6802A /* BandrossDemoRegular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4DACF02C299CFABF00F51C7E /* PreferPage */ = {
+			isa = PBXGroup;
+			children = (
+				4DACF02D299CFAE500F51C7E /* PreferController.swift */,
+				4DACF02F299D20C800F51C7E /* ActivityPreferCell.swift */,
+			);
+			path = PreferPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,11 +465,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D27B942293DFE7A000DDD39 /* ViewController.swift in Sources */,
+				4DACF030299D20C800F51C7E /* ActivityPreferCell.swift in Sources */,
 				4D27B93E293DFE7A000DDD39 /* AppDelegate.swift in Sources */,
 				4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */,
 				4D27B940293DFE7A000DDD39 /* SceneDelegate.swift in Sources */,
 				4D572DBF293F8509005761D5 /* DetailController.swift in Sources */,
 				4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */,
+				4DACF02E299CFAE600F51C7E /* PreferController.swift in Sources */,
 				4D572D99293F62E4005761D5 /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

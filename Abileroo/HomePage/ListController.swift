@@ -9,11 +9,14 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class ListController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class ListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate{
     
     @IBOutlet weak var ricerca: UISearchBar!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var image: UITableView!
+    
+    @IBOutlet weak var home: UITabBarItem!
+    
     
     
     var filtro = Array<String>()
@@ -38,6 +41,15 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+    
+    func tabBarBassa(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if(item.tag == 1) {
+            ListController().viewDidLoad()
+        } else if(item.tag == 2) {
+            performSegue(withIdentifier: "PreferSegue", sender: view)
+        }
+    }
+    
 }
 
 
@@ -111,29 +123,19 @@ extension ListController {
              
                 print(list)
                 let item = list[indexPath.row]
-                cell1.titleLabel?.text = item.name
-                cell1.descriptionLabel?.text = item.address
-                cell1.profileImage?.sd_setImage(with: URL(string: item.image ?? ""))
-                return cell1
-                
-            }
-            else {
+                    cell1.configure2(item: item)
+                    return cell1
+            } else {
                 let item = data[indexPath.row]
-                cell1.titleLabel?.text = item.name
-                cell1.descriptionLabel?.text = item.address
-                cell1.profileImage?.sd_setImage(with: URL(string: item.image ?? ""))
+                cell1.configure2(item: item)
                 return cell1
                 }
-                
             }
-        
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "Detail", sender: indexPath.row)
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

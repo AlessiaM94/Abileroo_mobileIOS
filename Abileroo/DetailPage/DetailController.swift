@@ -17,6 +17,11 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet var titleAc: UILabel!
     @IBOutlet weak var desriptionLabel: UILabel!
     
+ 
+    
+    
+    
+    
     @IBOutlet weak var likeButton: UIBarButtonItem!
     var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
@@ -43,13 +48,8 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd {
-            let item2 = self.data1?.products
-            print(data1?.products as Any)
-            cell2.DescProd.text = item2?[0].description
-            cell2.NomProd.text = item2?[0].name
-            cell2.Prezzo.text = String(item2?[0].price ?? 0.00) + " €"
-            cell2.ImagePr?.sd_setImage(with: URL(string: item2?[0].productImage ?? ""))
+        if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd, let item = self.data1?.products[indexPath.row] {
+            cell2.configure(item: item)
             return cell2
         }
         return UITableViewCell()
