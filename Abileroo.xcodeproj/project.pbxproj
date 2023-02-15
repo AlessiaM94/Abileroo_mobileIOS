@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4DACF02C299CFABF00F51C7E /* PreferPage */,
-				4D51ED0D299BC05200D6802A /* Fonts */,
+				4D51ED0D299BC05200D6802A /* Font */,
 				4D51ED0C299BA2A900D6802A /* DetailPage */,
 				4D51ED0B299BA1C600D6802A /* HomePage */,
 				4D27B93D293DFE7A000DDD39 /* AppDelegate.swift */,
@@ -206,13 +206,13 @@
 			path = DetailPage;
 			sourceTree = "<group>";
 		};
-		4D51ED0D299BC05200D6802A /* Fonts */ = {
+		4D51ED0D299BC05200D6802A /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				4D51ED10299BC25700D6802A /* Emithey Brush.ttf */,
 				4D51ED0E299BC08B00D6802A /* BandrossDemoRegular.ttf */,
 			);
-			path = Fonts;
+			path = Font;
 			sourceTree = "<group>";
 		};
 		4DACF02C299CFABF00F51C7E /* PreferPage */ = {
