@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PreferController: UIViewController, UITabBarControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,28 +18,28 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
     
     @IBOutlet weak var tableViewPref: UITableView!
     @IBOutlet weak var elencoP: UILabel!
-    
+    var data3: [String] = ["Attività1", "Attività2", "Attività3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewPref.dataSource = self
         tableViewPref.delegate = self
-        
-        elencoP.font = UIFont(name: "Emithey Brush", size: 30)
+        elencoP.font = UIFont(name: "Emithey Brush", size: 40)
+        self.tableViewPref.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {1}
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        data3.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifierCellPref = "cellPreferiti"
-        if let cell3 = tableView.dequeueReusableCell(withIdentifier: identifierCellPref, for: indexPath as IndexPath) as? ActivityPreferCell{
+        let myIdentifier3 = "cellPreferiti"
+        if let cell3 = tableView.dequeueReusableCell(withIdentifier: myIdentifier3, for: indexPath) as? ActivityPreferCell {
+            cell3.NomeAttPref.text = data3[indexPath.row]
             return cell3
         }
         return UITableViewCell()
     }
-    
 }

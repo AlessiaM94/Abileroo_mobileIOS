@@ -8,7 +8,9 @@
 import UIKit
 
 class ActivityPreferCell: UITableViewCell{
-
+    @IBOutlet weak var immagineAttPref: UIImageView!
+    @IBOutlet weak var NomeAttPref: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -16,6 +18,9 @@ class ActivityPreferCell: UITableViewCell{
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+    /*func configure3(item: Products){
+        NomeAttPref.text = item.name
+        
+    }*/
 }
 
