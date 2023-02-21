@@ -7,26 +7,39 @@
 
 import UIKit
 import Alamofire
+import Foundation
 
 class DetailController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var addressView: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet var titleAc: UILabel!
     @IBOutlet weak var desriptionLabel: UILabel!
     
- 
+    @IBOutlet weak var removePreferButton: UIButton!
+    
+    @IBAction func removePrefer(_ sender: UIButton) {
+        guard let data1 = data1 else { return }
+        PreferManager.shared.deleteAllPreferiti(data1)
+    }
+    
+    
+    @IBAction func onClickAction(_ sender: UIButton)
+    {
+        guard let data1 = data1 else { return }
+        PreferManager.shared.setPreferiti(data1)
+        
+    }
     
     
     
-    
-    @IBOutlet weak var likeButton: UIBarButtonItem!
     var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
-    
-    
+    var preferiti = [CommercialActivity]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +52,8 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         image.sd_setImage(with: URL(string: data1?.image ?? ""))
         self.tableview.reloadData()
     }
+    
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {1}

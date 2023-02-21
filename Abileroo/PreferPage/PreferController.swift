@@ -7,18 +7,21 @@
 
 import UIKit
 import Alamofire
+import Foundation
 
 class PreferController: UIViewController, UITabBarControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var preferiti = PreferManager.shared.getPreferiti()
+    var prefer: Bool = false
     
-    
-    
+
     
 
     
     @IBOutlet weak var tableViewPref: UITableView!
     @IBOutlet weak var elencoP: UILabel!
-    var data3: [String] = ["Attività1", "Attività2", "Attività3"]
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +31,19 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
         self.tableViewPref.reloadData()
     }
     
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {1}
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data3.count
+        preferiti.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myIdentifier3 = "cellPreferiti"
         if let cell3 = tableView.dequeueReusableCell(withIdentifier: myIdentifier3, for: indexPath) as? ActivityPreferCell {
-            cell3.NomeAttPref.text = data3[indexPath.row]
+            cell3.immagineAttPref.sd_setImage(with: URL(string: preferiti[indexPath.row].image ?? " "))
+            cell3.NomeAttPref?.text = preferiti[indexPath.row].name
             return cell3
         }
         return UITableViewCell()
