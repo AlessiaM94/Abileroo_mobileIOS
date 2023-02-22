@@ -12,6 +12,7 @@ import Foundation
 class PreferController: UIViewController, UITabBarControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var preferiti = PreferManager.shared.getPreferiti()
+    var eliminati = PreferManager.shared.deleteOnePrefer
     var prefer: Bool = false
     
 
@@ -20,6 +21,7 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
     
     @IBOutlet weak var tableViewPref: UITableView!
     @IBOutlet weak var elencoP: UILabel!
+   
    
     
     
@@ -48,4 +50,20 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
         }
         return UITableViewCell()
     }
+    
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            let action = UITableViewRowAction.init(
+                style: .default, title: "Delete"
+            ) {
+                (action, index) in
+                print("Delete", index.row)
+                
+                self.preferiti.remove(at: index.row)
+                tableView.deleteRows(at: [index], with: .right)
+                
+                            }
+
+            return [action]
+        }
+    
 }

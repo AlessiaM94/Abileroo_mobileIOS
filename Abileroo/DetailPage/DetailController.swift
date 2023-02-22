@@ -34,6 +34,10 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         
     }
     
+    @IBAction func deleteOnePrefer(_ sender: UIButton) {
+        guard let data1 = data1 else { return }
+        PreferManager.shared.deleteOnePrefer(data1)
+    }
     
     
     var stringaDiPassaggio: String = String()
@@ -48,7 +52,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         desriptionLabel.text = self.data1?.description
         addressView.text = self.data1?.address
         titleAc.text = self.data1?.name
-        titleAc.font = UIFont(name: "Emithey Brush", size: 30)
+        titleAc.font = UIFont(name: "Emithey Brush", size: 25)
         image.sd_setImage(with: URL(string: data1?.image ?? ""))
         self.tableview.reloadData()
     }

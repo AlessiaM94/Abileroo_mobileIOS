@@ -41,4 +41,11 @@ class PreferManager {
         defaults.removeObject(forKey: "objects")
     }
     
+    
+    func deleteOnePrefer(_ data1: CommercialActivity){
+        UserDefaults.standard.removeObject(forKey: "objects")
+        
+    }
 }
+    
+
