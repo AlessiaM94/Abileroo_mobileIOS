@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PreferManager {
     
@@ -23,28 +24,34 @@ class PreferManager {
     }
     
     
-    func setPreferiti(_ data1: CommercialActivity) {
-        let jsonEncoder = JSONEncoder()
+    func setPreferito(_ data1: CommercialActivity) {
         var preferitoAttuale = getPreferiti()
         preferitoAttuale.append(data1)
-        if let preferiti = try? jsonEncoder.encode(preferitoAttuale) {
+        setPreferiti(preferiti: preferitoAttuale)
+    }
+    
+    func deleteAllPreferiti() {
+        setPreferiti(preferiti: [])
+    }
+    
+    
+    func deleteOnePrefer(_ data: CommercialActivity){
+        var preferiti = getPreferiti()
+        preferiti.removeAll { activity in
+            return activity.id == data.id
+        }
+        setPreferiti(preferiti: preferiti)
+    }
+    
+    private func setPreferiti(preferiti: [CommercialActivity]) {
+        let jsonEncoder = JSONEncoder()
+        if let preferiti = try? jsonEncoder.encode(preferiti) {
             let defaults = UserDefaults.standard
             defaults.set(preferiti, forKey: "objects")
             print(preferiti)
         } else {
             print("Failed to save objects.")
         }
-    }
-    
-    func deleteAllPreferiti(_ data1: CommercialActivity) {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: "objects")
-    }
-    
-    
-    func deleteOnePrefer(_ data1: CommercialActivity){
-        UserDefaults.standard.removeObject(forKey: "objects")
-        
     }
 }
     

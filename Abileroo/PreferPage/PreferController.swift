@@ -11,8 +11,8 @@ import Foundation
 
 class PreferController: UIViewController, UITabBarControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    var preferiti = PreferManager.shared.getPreferiti()
-    var eliminati = PreferManager.shared.deleteOnePrefer
+    
+    var preferiti = [CommercialActivity]()
     var prefer: Bool = false
     
 
@@ -33,7 +33,11 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
         self.tableViewPref.reloadData()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        preferiti = PreferManager.shared.getPreferiti()
+        self.tableViewPref.reloadData()
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {1}
     
@@ -58,11 +62,15 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
                 (action, index) in
                 print("Delete", index.row)
                 
+                
                 self.preferiti.remove(at: index.row)
                 tableView.deleteRows(at: [index], with: .right)
+                PreferManager.shared.deleteOnePrefer(self.preferiti[indexPath.row])
                 
-                            }
-
+                
+                
+            }
+            
             return [action]
         }
     
