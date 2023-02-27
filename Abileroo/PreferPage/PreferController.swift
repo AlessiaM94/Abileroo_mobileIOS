@@ -47,7 +47,7 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myIdentifier3 = "cellPreferiti"
-        if let cell3 = tableView.dequeueReusableCell(withIdentifier: myIdentifier3, for: indexPath) as? ActivityPreferCell {
+        if let cell3 = preferiti.count == 0 ? nil : tableView.dequeueReusableCell(withIdentifier: myIdentifier3, for: indexPath) as? ActivityPreferCell {
             cell3.immagineAttPref.sd_setImage(with: URL(string: preferiti[indexPath.row].image ?? " "))
             cell3.NomeAttPref?.text = preferiti[indexPath.row].name
             return cell3
@@ -55,23 +55,31 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
         return UITableViewCell()
     }
     
-        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-            let action = UITableViewRowAction.init(
-                style: .default, title: "Delete"
-            ) {
-                (action, index) in
-                print("Delete", index.row)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction.init(
+            style: .default, title: "Delete"
+        ) {
+            (action, index) in
+            print("Delete", index.row)
+            
+            
+            self.preferiti.remove(at: index.row)
+            print("index.row è: ", index.row)
+            print("indexPath.row è: ", [indexPath.row])
+            tableView.deleteRows(at: [index], with: .right)
+            
+            if(self.preferiti.count == 0) {
+                self.elencoP.text = "Nessun preferito"
+                UserDefaults.standard.removeObject(forKey: "objects")
                 
-                
-                self.preferiti.remove(at: index.row)
-                tableView.deleteRows(at: [index], with: .right)
-                PreferManager.shared.deleteOnePrefer(self.preferiti[indexPath.row])
-                
-                
-                
+            } else {
+                self.elencoP.text = "Elenco preferiti"
+                PreferManager.shared.deleteOnePrefer(self.preferiti[indexPath.row - 1])
             }
             
-            return [action]
         }
+        
+        return [action]
+    }
     
 }
