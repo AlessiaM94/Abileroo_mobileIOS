@@ -72,11 +72,12 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
                 self.elencoP.text = "Nessun preferito"
                 UserDefaults.standard.removeObject(forKey: "objects")
                 
-            } else {
+            } else if (indexPath.row > 1 ){
                 self.elencoP.text = "Elenco preferiti"
                 PreferManager.shared.deleteOnePrefer(self.preferiti[indexPath.row - 1])
-            }
-            
+            } /*else if (indexPath.row == 1){
+                PreferManager.shared.deleteOnePrefer(self.preferiti[indexPath.row])
+            }*/
         }
         
         return [action]
