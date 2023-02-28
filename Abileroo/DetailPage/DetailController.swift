@@ -21,9 +21,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     @IBOutlet weak var removePreferButton: UIButton!
     
-    @IBAction func removePrefer(_ sender: UIButton) {
-        PreferManager.shared.deleteAllPreferiti()
-    }
+    
     
     
     @IBAction func onClickAction(_ sender: UIButton)

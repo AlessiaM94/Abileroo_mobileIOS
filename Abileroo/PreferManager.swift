@@ -15,8 +15,8 @@ class PreferManager {
     // nomeFunzione() -> Dato in uscita(output) (in questo caso Array di Attività commerciali)
     // Il corpo della funzione getPreferiti prende i dati con la chiave di identificazione "objects" e li salva in una costante preferitoSalvato e fa il decode tramite JSONDecoder, e restituisce un array di Commercial Activity.
     func getPreferiti() -> [CommercialActivity] {
-        let defaults = UserDefaults.standard
         
+        let defaults = UserDefaults.standard
         if let preferitoSalvato = defaults.data(forKey: "objects") {
             let jsonDecoder = JSONDecoder()
             if let decoded = try? jsonDecoder.decode([CommercialActivity].self, from: preferitoSalvato) {
@@ -27,11 +27,25 @@ class PreferManager {
     }
     
     //func nomeFunzione (nomeParamentro: Tipo di dato da prendere in ingresso(input) (in questo caso un'attività commerciale singola)) --> recupera i preferiti e li salva in una variabile nuova "preferitoAttuale", dopodichè aggiunge la singola attività tramite "append" alla stessa var (preferitoAttuale)
+    //Aggiunta di una booleana settata in false per il controllo della presenza o meno dell'attività commerciale. Attraverso un ciclo For si controlla se l'id dell'attività è presente e si setta la variabile in true. Se non è presente (e quindi è false), procede con l'aggiunta e il set dell'attività nei preferiti.
     func setPreferito(_ data1: CommercialActivity) {
+        
+        var activitycheck = false
         var preferitoAttuale = getPreferiti()
-        preferitoAttuale.append(data1)
-        setPreferiti(preferiti: preferitoAttuale)
+        for attività in preferitoAttuale {
+            if(attività.id == data1.id) {
+                activitycheck = true
+            }
+        }
+        if(activitycheck == false) {
+            preferitoAttuale.append(data1)
+            setPreferiti(preferiti: preferitoAttuale)
+        }
+        
     }
+        
+        
+    
     
     // Prende tutti i preferiti e li sovrascrive con un Array vuoto.
     func deleteAllPreferiti() {

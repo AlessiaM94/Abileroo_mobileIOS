@@ -33,6 +33,12 @@ class PreferController: UIViewController, UITabBarControllerDelegate, UITableVie
         self.tableViewPref.reloadData()
     }
     
+   
+    @IBAction func deleteAll(_ sender: UIButton) {
+        PreferManager.shared.deleteAllPreferiti()
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         preferiti = PreferManager.shared.getPreferiti()
