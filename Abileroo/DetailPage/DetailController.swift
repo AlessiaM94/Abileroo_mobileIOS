@@ -19,9 +19,16 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet var titleAc: UILabel!
     @IBOutlet weak var desriptionLabel: UILabel!
     
-    @IBOutlet weak var removePreferButton: UIButton!
+    
+    @IBOutlet weak var cartButton: UIButton!
     
     
+    @IBAction func onClickProdotto(_ sender: UIButton) {
+        guard let prodotto = data1?.products[0] else { return }
+        print("ciao", prodottiCarrello, prodotto)
+        CartManager.shared2.setProdottoAcquistato(prodotto)
+        
+    }
     
     
     @IBAction func onClickAction(_ sender: UIButton)
@@ -31,16 +38,13 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         
     }
     
-    @IBAction func deleteOnePrefer(_ sender: UIButton) {
-        guard let data1 = data1 else { return }
-        PreferManager.shared.deleteOnePrefer(data1)
-    }
     
     
+    var prodotti: Products?
     var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
     var preferiti = [CommercialActivity]()
-
+    var prodottiCarrello = [Products]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

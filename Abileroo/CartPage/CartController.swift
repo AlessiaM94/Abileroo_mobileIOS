@@ -15,7 +15,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var prodottiCart: UILabel!
     
-    var dataProd: CommercialActivity?
+    var prodottiCarrello = [Products]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +25,23 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableViewCart.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prodottiCarrello = CartManager.shared2.getProdottoAcquistato()
+        self.tableViewCart.reloadData()
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {1}
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        return prodottiCarrello.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifierCellCart = "cellCart"
         if let cellCart = tableView.dequeueReusableCell(withIdentifier: identifierCellCart, for: indexPath) as? CartActivityCell {
-            cellCart.nomeProdCart?.text = "Nome prodotto"
+            cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
             cellCart.quantitaProd?.text = "4"
             return cellCart
         }
