@@ -66,8 +66,8 @@
 		4D27B95B293DFE7C000DDD39 /* AbilerooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbilerooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D27B95F293DFE7C000DDD39 /* AbilerooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilerooUITests.swift; sourceTree = "<group>"; };
 		4D27B961293DFE7C000DDD39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D51ED0E299BC08B00D6802A /* BandrossDemoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BandrossDemoRegular.ttf; path = ../../../../../bandross/BandrossDemoRegular.ttf; sourceTree = "<group>"; };
-		4D51ED10299BC25700D6802A /* Emithey Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Emithey Brush.ttf"; path = "../../../../../Emithey Brush/Emithey Brush.ttf"; sourceTree = "<group>"; };
+		4D51ED0E299BC08B00D6802A /* BandrossDemoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandrossDemoRegular.ttf; sourceTree = "<group>"; };
+		4D51ED10299BC25700D6802A /* Emithey Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Emithey Brush.ttf"; sourceTree = "<group>"; };
 		4D572D98293F62E4005761D5 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		4D572D9D293F64E2005761D5 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		4D572DBE293F8509005761D5 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
