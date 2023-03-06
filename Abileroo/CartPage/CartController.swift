@@ -21,13 +21,19 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableViewCart.dataSource = self
         tableViewCart.delegate = self
-        prodottiCart.font = UIFont(name: "Emithey Brush", size: 30)
+        prodottiCart.font = UIFont(name: "Emithey Brush", size: 25)
         self.tableViewCart.reloadData()
+
     }
+    
+    @IBAction func deleteAllProd(_ sender: UIButton) {
+        CartManager.shared2.deleteAllProdCart()
+    }
+   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        prodottiCarrello = CartManager.shared2.getProdottoAcquistato()
+        prodottiCarrello = CartManager.shared2.getProdottiAcquistati()
         self.tableViewCart.reloadData()
     }
     
@@ -46,6 +52,26 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cellCart
         }
         return UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction(style: .normal, title: "Delete") {
+            (action, index) in
+            print("Stai eliminando l'elemento ad indice: ", index.row)
+            
+            self.prodottiCarrello.remove(at: index.row)
+            tableView.deleteRows(at: [index], with: .right)
+            if(self.prodottiCarrello.count == 0) {
+                self.prodottiCart.text = "Carrello vuoto"
+                UserDefaults.standard.removeObject(forKey: "objects2")
+                
+            } else if (indexPath.row > 1 ){
+                self.prodottiCart.text = "Prodotti nel carrello"
+                CartManager.shared2.deleteOneProd(self.prodottiCarrello[indexPath.row - 1])
+            }
+        }
+        return [action]
     }
 
 }

@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import Foundation
 
+
 class DetailController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
@@ -24,11 +25,12 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     
     @IBAction func onClickProdotto(_ sender: UIButton) {
-        guard let prodotto = data1?.products[0] else { return }
-        print("ciao", prodottiCarrello, prodotto)
+        guard let prodotto = self.data1?.products[0] else { return }
+        print(prodottiCarrello, prodotto)
         CartManager.shared2.setProdottoAcquistato(prodotto)
         
     }
+    
     
     
     @IBAction func onClickAction(_ sender: UIButton)
@@ -37,8 +39,6 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         PreferManager.shared.setPreferito(data1)
         
     }
-    
-    
     
     var prodotti: Products?
     var stringaDiPassaggio: String = String()

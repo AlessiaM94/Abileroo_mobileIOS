@@ -217,8 +217,8 @@
             filePath = "Abileroo/HomePage/ListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -313,9 +313,9 @@
             filePath = "Abileroo/CartManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "getProdottoAcquistato()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getProdottiAcquistati()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,8 +329,8 @@
             filePath = "Abileroo/CartManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "setProdottoAcquistato(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,8 +345,8 @@
             filePath = "Abileroo/CartManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "setProdotti(prodotti:)"
             landmarkType = "7">
          </BreakpointContent>

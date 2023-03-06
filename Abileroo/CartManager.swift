@@ -12,7 +12,8 @@ class CartManager {
     
     static let shared2 = CartManager()
     
-    func getProdottoAcquistato() -> [Products] {
+    
+    func getProdottiAcquistati() -> [Products] {
         let defaults = UserDefaults.standard
         if let prodottoClick = defaults.data(forKey: "objects2") {
             let jsonDecoder = JSONDecoder()
@@ -24,10 +25,22 @@ class CartManager {
     }
     
     func setProdottoAcquistato(_ prodotto: Products) {
-        var prodottoNelCarrello = getProdottoAcquistato()
-        print("ALE", prodottoNelCarrello, prodotto)
+        var prodottoNelCarrello = getProdottiAcquistati()
         prodottoNelCarrello.append(prodotto)
         setProdotti(prodotti: prodottoNelCarrello)
+    }
+    
+    
+    func deleteAllProdCart() {
+        setProdotti(prodotti: [])
+    }
+    
+    func deleteOneProd(_ prodotto: Products) {
+        var prodotti = getProdottiAcquistati()
+        prodotti.removeAll { product in
+            return product.name == prodotto.name
+        }
+        setProdotti(prodotti: prodotti)
     }
     
     private func setProdotti(prodotti: [Products]) {
