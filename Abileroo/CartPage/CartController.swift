@@ -15,13 +15,17 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var prodottiCart: UILabel!
     
+    var quantityToCart: Int = Int()
     var prodottiCarrello = [Products]()
-    
+    static let shared4 = CartActivityCell()
+    static let shared5 = CartController()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewCart.dataSource = self
         tableViewCart.delegate = self
         prodottiCart.font = UIFont(name: "Emithey Brush", size: 25)
+
+        print("La quantita del prodotto con id: ", CartController.shared5.quantityToCart)
         self.tableViewCart.reloadData()
 
     }
@@ -48,7 +52,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let identifierCellCart = "cellCart"
         if let cellCart = tableView.dequeueReusableCell(withIdentifier: identifierCellCart, for: indexPath) as? CartActivityCell {
             cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
-            cellCart.quantitaProd?.text = "4"
+            cellCart.numQuantita?.text = String(CartController.shared5.quantityToCart)
             return cellCart
         }
         return UITableViewCell()

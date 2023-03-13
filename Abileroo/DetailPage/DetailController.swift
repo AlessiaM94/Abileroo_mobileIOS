@@ -24,13 +24,19 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var cartButton: UIButton!
     
     
+    
     @IBAction func onClickProdotto(_ sender: UIButton) {
         guard let prodotto = self.data1?.products[0] else { return }
-        print(prodottiCarrello, prodotto)
+        print(CartController.shared5.quantityToCart,prodotto)
         CartManager.shared2.setProdottoAcquistato(prodotto)
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let alert = UIAlertController(title: "Hai selezionato la cella con nome: ", message: data1?.products[indexPath.row].name, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     @IBAction func onClickAction(_ sender: UIButton)
@@ -39,12 +45,12 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         PreferManager.shared.setPreferito(data1)
         
     }
-    
+    var cart = ActCellProd()
     var prodotti: Products?
-    var stringaDiPassaggio: String = String()
     var data1: CommercialActivity?
     var preferiti = [CommercialActivity]()
     var prodottiCarrello = [Products]()
+    var items: [Products] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,9 @@ import UIKit
 class CartManager {
     
     static let shared2 = CartManager()
+    static let shared3 = ActCellProd()
+    
+    
     
     
     func getProdottiAcquistati() -> [Products] {
@@ -25,9 +28,18 @@ class CartManager {
     }
     
     func setProdottoAcquistato(_ prodotto: Products) {
+        var productCheck = false
         var prodottoNelCarrello = getProdottiAcquistati()
-        prodottoNelCarrello.append(prodotto)
-        setProdotti(prodotti: prodottoNelCarrello)
+        for product in prodottoNelCarrello {
+            if(product.name == prodotto.name) {
+                productCheck = true
+            }
+        }
+        if(productCheck == false) {
+            prodottoNelCarrello.append(prodotto)
+            setProdotti(prodotti: prodottoNelCarrello)
+        }
+        
     }
     
     

@@ -8,10 +8,6 @@
 import UIKit
 
 class CartActivityCell: UITableViewCell {
-
-    
-    @IBOutlet weak var quantitaProd: UILabel!
-    
     @IBOutlet weak var nomeProdCart: UILabel!
     
     @IBOutlet weak var numQuantita: UILabel!

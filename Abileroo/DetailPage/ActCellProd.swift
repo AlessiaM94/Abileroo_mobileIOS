@@ -18,10 +18,14 @@ class ActCellProd: UITableViewCell {
     @IBOutlet weak var bottoneMeno: UIButton!
     @IBOutlet weak var contatore: UILabel!
     var counter: Int = 0
+    static let shared3 = ActCellProd()
     
     @IBAction func bottonePiuAction(_ sender: Any) {
         counter = counter + 1
+        print(counter)
         contatore.text = counter.description
+        CartController.shared5.quantityToCart = Int(counter.description)!
+        
     }
     
     @IBAction func bottoneMenoAction(_ sender: Any) {
