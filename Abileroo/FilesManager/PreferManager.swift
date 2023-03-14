@@ -13,17 +13,8 @@ class PreferManager {
     static let shared = PreferManager()
     
     // nomeFunzione() -> Dato in uscita(output) (in questo caso Array di Attività commerciali)
-    // Il corpo della funzione getPreferiti prende i dati con la chiave di identificazione "objects" e li salva in una costante preferitoSalvato e fa il decode tramite JSONDecoder, e restituisce un array di Commercial Activity.
     func getPreferiti() -> [CommercialActivity] {
-        
-        let defaults = UserDefaults.standard
-        if let preferitoSalvato = defaults.data(forKey: "objects") {
-            let jsonDecoder = JSONDecoder()
-            if let decoded = try? jsonDecoder.decode([CommercialActivity].self, from: preferitoSalvato) {
-                return decoded // Return interrompe la funzione ed esce dal blocco portando fuori l'informazione (Array di CommercialActivity preferite).
-            }
-        }
-        return [] // Altrimenti, se nel corpo della funzione c'è qualcosa che non funziona, restituisce un'Array vuoto.
+        DataManager.sharedDmanager.getObject(type: [CommercialActivity](), key: "objects")
     }
     
     //func nomeFunzione (nomeParamentro: Tipo di dato da prendere in ingresso(input) (in questo caso un'attività commerciale singola)) --> recupera i preferiti e li salva in una variabile nuova "preferitoAttuale", dopodichè aggiunge la singola attività tramite "append" alla stessa var (preferitoAttuale)

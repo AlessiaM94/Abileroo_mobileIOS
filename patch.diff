@@ -1,0 +1,100 @@
+diff --git a/Abileroo/CartManager.swift b/Abileroo/CartManager.swift
+index 699bcb5..9fb66ab 100644
+--- a/Abileroo/CartManager.swift
++++ b/Abileroo/CartManager.swift
+@@ -55,7 +55,7 @@ class CartManager {
+         setProdotti(prodotti: prodotti)
+     }
+     
+-    private func setProdotti(prodotti: [Products]) {
++    func setProdotti(prodotti: [Products]) {
+         let jsonEncoder = JSONEncoder()
+         if let prodotti = try? jsonEncoder.encode(prodotti) {
+             let defaults = UserDefaults.standard
+diff --git a/Abileroo/DetailPage/ActCellProd.swift b/Abileroo/DetailPage/ActCellProd.swift
+index a4a3adc..3073e0f 100644
+--- a/Abileroo/DetailPage/ActCellProd.swift
++++ b/Abileroo/DetailPage/ActCellProd.swift
+@@ -20,12 +20,18 @@ class ActCellProd: UITableViewCell {
+     var counter: Int = 0
+     static let shared3 = ActCellProd()
+     
++    private var product: Products?
++    private var actionPiu: ((Products) -> ())? = nil
++    private var actionMeno: ((Products) -> ())? = nil
++    
+     @IBAction func bottonePiuAction(_ sender: Any) {
+         counter = counter + 1
+         print(counter)
+         contatore.text = counter.description
+         CartController.shared5.quantityToCart = Int(counter.description)!
+-        
++        if let actionPiu = actionPiu, let product = product {
++            actionPiu(product)
++        }
+     }
+     
+     @IBAction func bottoneMenoAction(_ sender: Any) {
+@@ -35,6 +41,9 @@ class ActCellProd: UITableViewCell {
+             contatore.text = String(0)
+             bottonePiuAction(counter > 0)
+         }
++        if let actionMeno = actionMeno, let product = product {
++            actionMeno(product)
++        }
+     }
+     
+     override func awakeFromNib() {
+@@ -47,11 +56,13 @@ class ActCellProd: UITableViewCell {
+         
+         // Configure the view for the selected state
+     }
+-    func configure(item: Products){
++    func configure(item: Products, actionPiu: @escaping ((Products) -> ()), actionMeno: @escaping ((Products) -> ())){
++        self.product = item
+         DescProd.text = item.description
+         NomProd.text = item.name
+         Prezzo.text = String(item.price ?? 0.00) + " €"
+         ImagePr?.sd_setImage(with: URL(string: item.productImage ?? ""))
+-        
++        self.actionPiu = actionPiu
++        self.actionMeno = actionMeno
+     }
+ }
+diff --git a/Abileroo/DetailPage/DetailController.swift b/Abileroo/DetailPage/DetailController.swift
+index 8ba8a21..9afb2cb 100644
+--- a/Abileroo/DetailPage/DetailController.swift
++++ b/Abileroo/DetailPage/DetailController.swift
+@@ -23,13 +23,13 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
+     
+     @IBOutlet weak var cartButton: UIButton!
+     
+-    
++    var productsToCart: [Products] = []
+     
+     @IBAction func onClickProdotto(_ sender: UIButton) {
+-        guard let prodotto = self.data1?.products[0] else { return }
+-        print(CartController.shared5.quantityToCart,prodotto)
+-        CartManager.shared2.setProdottoAcquistato(prodotto)
+-        
++//        guard let prodotto = self.data1?.products[0] else { return }
++//        print(CartController.shared5.quantityToCart,prodotto)
++//        CartManager.shared2.setProdottoAcquistato(prodotto)
++        CartManager.shared2.setProdotti(prodotti: productsToCart)
+     }
+     
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+@@ -75,7 +75,12 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd, let item = self.data1?.products[indexPath.row] {
+-            cell2.configure(item: item)
++            cell2.configure(item: item, actionPiu: { product in
++                self.productsToCart.append(product)
++            }, actionMeno: { product in
++                print("MENO: \(product)")
++            })
++
+             return cell2
+         }
+         return UITableViewCell()

@@ -1,0 +1,29 @@
+***************
+*** 23,35 ****
+      
+      @IBOutlet weak var cartButton: UIButton!
+      
+-     
+      
+      @IBAction func onClickProdotto(_ sender: UIButton) {
+-         guard let prodotto = self.data1?.products[0] else { return }
+-         print(CartController.shared5.quantityToCart,prodotto)
+-         CartManager.shared2.setProdottoAcquistato(prodotto)
+-         
+      }
+      
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+--- 23,35 ----
+      
+      @IBOutlet weak var cartButton: UIButton!
+      
++     var productsToCart: [Products] = []
+      
+      @IBAction func onClickProdotto(_ sender: UIButton) {
++ //        guard let prodotto = self.data1?.products[0] else { return }
++ //        print(CartController.shared5.quantityToCart,prodotto)
++ //        CartManager.shared2.setProdottoAcquistato(prodotto)
++         CartManager.shared2.setProdotti(prodotti: productsToCart)
+      }
+      
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){

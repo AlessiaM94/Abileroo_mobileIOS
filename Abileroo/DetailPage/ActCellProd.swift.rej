@@ -1,0 +1,33 @@
+***************
+*** 20,31 ****
+      var counter: Int = 0
+      static let shared3 = ActCellProd()
+      
+      @IBAction func bottonePiuAction(_ sender: Any) {
+          counter = counter + 1
+          print(counter)
+          contatore.text = counter.description
+          CartController.shared5.quantityToCart = Int(counter.description)!
+-         
+      }
+      
+      @IBAction func bottoneMenoAction(_ sender: Any) {
+--- 20,37 ----
+      var counter: Int = 0
+      static let shared3 = ActCellProd()
+      
++     private var product: Products?
++     private var actionPiu: ((Products) -> ())? = nil
++     private var actionMeno: ((Products) -> ())? = nil
++     
+      @IBAction func bottonePiuAction(_ sender: Any) {
+          counter = counter + 1
+          print(counter)
+          contatore.text = counter.description
+          CartController.shared5.quantityToCart = Int(counter.description)!
++         if let actionPiu = actionPiu, let product = product {
++             actionPiu(product)
++         }
+      }
+      
+      @IBAction func bottoneMenoAction(_ sender: Any) {

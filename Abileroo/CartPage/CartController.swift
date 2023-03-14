@@ -15,29 +15,29 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var prodottiCart: UILabel!
     
+    var cartProducts: [Int:Int] = [:]
     var quantityToCart: Int = Int()
     var prodottiCarrello = [Products]()
     static let shared4 = CartActivityCell()
-    static let shared5 = CartController()
+    static let sharedCcontrol = CartController()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewCart.dataSource = self
         tableViewCart.delegate = self
         prodottiCart.font = UIFont(name: "Emithey Brush", size: 25)
-
-        print("La quantita del prodotto con id: ", CartController.shared5.quantityToCart)
+        print("La quantità del prodotto è: ", CartController.sharedCcontrol.quantityToCart)
         self.tableViewCart.reloadData()
 
     }
     
     @IBAction func deleteAllProd(_ sender: UIButton) {
-        CartManager.shared2.deleteAllProdCart()
+        CartManager.sharedCmanager.deleteAllProdCart()
     }
    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        prodottiCarrello = CartManager.shared2.getProdottiAcquistati()
+        prodottiCarrello = CartManager.sharedCmanager.getProdottiAcquistati()
         self.tableViewCart.reloadData()
     }
     
@@ -52,8 +52,9 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let identifierCellCart = "cellCart"
         if let cellCart = tableView.dequeueReusableCell(withIdentifier: identifierCellCart, for: indexPath) as? CartActivityCell {
             cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
-            cellCart.numQuantita?.text = String(CartController.shared5.quantityToCart)
+            cellCart.numQuantita?.text = String(CartController.sharedCcontrol.quantityToCart)
             return cellCart
+            
         }
         return UITableViewCell()
     }
@@ -72,7 +73,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             } else if (indexPath.row > 1 ){
                 self.prodottiCart.text = "Prodotti nel carrello"
-                CartManager.shared2.deleteOneProd(self.prodottiCarrello[indexPath.row - 1])
+                CartManager.sharedCmanager.deleteOneProd(self.prodottiCarrello[indexPath.row - 1])
             }
         }
         return [action]

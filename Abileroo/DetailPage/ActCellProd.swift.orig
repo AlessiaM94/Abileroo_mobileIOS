@@ -19,17 +19,14 @@ class ActCellProd: UITableViewCell {
     @IBOutlet weak var contatore: UILabel!
     var counter: Int = 0
     static let shared3 = ActCellProd()
-    private var actionPiu: ((Products) -> ())? = nil
-    private var actionMeno: ((Products) -> ())? = nil
-    private var product: Products?
+    
+    
     @IBAction func bottonePiuAction(_ sender: Any) {
         counter += 1
         print(counter)
         contatore.text = counter.description
         CartController.sharedCcontrol.quantityToCart = Int(counter.description)!
-        if let actionPiu = actionPiu, let product = product {
-            actionPiu(product)
-        }
+        
     }
     
     @IBAction func bottoneMenoAction(_ sender: Any) {
@@ -38,9 +35,6 @@ class ActCellProd: UITableViewCell {
         if(counter < 0) {
             contatore.text = String(0)
             bottonePiuAction(counter > 0)
-        }
-        if let actionMeno = actionMeno, let product = product {
-            actionMeno(product)
         }
     }
     
@@ -54,13 +48,11 @@ class ActCellProd: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    func configure(item: Products, actionPiu: @escaping ((Products) -> ()), actionMeno: @escaping ((Products) -> ())){
-        self.product = item
+    func configure(item: Products){
         DescProd.text = item.description
         NomProd.text = item.name
         Prezzo.text = String(item.price ?? 0.00) + " €"
         ImagePr?.sd_setImage(with: URL(string: item.productImage ?? ""))
-        self.actionPiu = actionPiu
-        self.actionMeno = actionMeno
+        
     }
 }
