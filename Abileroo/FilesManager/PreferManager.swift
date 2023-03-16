@@ -21,14 +21,14 @@ class PreferManager {
     //Aggiunta di una booleana settata in false per il controllo della presenza o meno dell'attività commerciale. Attraverso un ciclo For si controlla se l'id dell'attività è presente e si setta la variabile in true. Se non è presente (e quindi è false), procede con l'aggiunta e il set dell'attività nei preferiti.
     func setPreferito(_ data1: CommercialActivity) {
         
-        var activitycheck = false
+        var activityCheck = false
         var preferitoAttuale = getPreferiti()
         for attività in preferitoAttuale {
             if(attività.id == data1.id) {
-                activitycheck = true
+                activityCheck = true
             }
         }
-        if(activitycheck == false) {
+        if(activityCheck == false) {
             preferitoAttuale.append(data1)
             setPreferiti(preferiti: preferitoAttuale)
         }

@@ -18,7 +18,6 @@ class ActCellProd: UITableViewCell {
     @IBOutlet weak var bottoneMeno: UIButton!
     @IBOutlet weak var contatore: UILabel!
     var counter: Int = 0
-    static let shared3 = ActCellProd()
     private var actionPiu: ((Products) -> ())? = nil
     private var actionMeno: ((Products) -> ())? = nil
     private var product: Products?
@@ -62,5 +61,8 @@ class ActCellProd: UITableViewCell {
         ImagePr?.sd_setImage(with: URL(string: item.productImage ?? ""))
         self.actionPiu = actionPiu
         self.actionMeno = actionMeno
+            
+        }
+        
     }
-}
+

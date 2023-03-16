@@ -21,6 +21,21 @@ class CartManager {
         setProdotti(prodotti: [])
     }
     
+    func setProdotto(_ prodotto: Products) {
+        var productCheck = false
+        var prodottiInseriti = getProdottiAcquistati()
+        for products in prodottiInseriti {
+            if(products.id == prodotto.id) {
+                productCheck = true
+            }
+        }
+        if(productCheck == false) {
+            prodottiInseriti.append(prodotto)
+            setProdotti(prodotti: prodottiInseriti)
+        }
+    }
+    
+    
     func deleteOneProd(_ prodotto: Products) {
         var prodotti = getProdottiAcquistati()
         prodotti.removeAll { product in
@@ -39,6 +54,8 @@ class CartManager {
             print("Non è stato possibile salvare il prodotto")
         }
     }
+    
+    
     
     
 }

@@ -15,7 +15,7 @@ class ListController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var image: UITableView!
     
-    @IBOutlet weak var home: UITabBarItem!
+    
     
     
     
@@ -87,7 +87,7 @@ extension  ListController {
 
 extension ListController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        print("Sto")
+        print(" ")
     }
 }
 

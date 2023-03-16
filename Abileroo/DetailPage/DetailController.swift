@@ -25,15 +25,14 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     var productsToCart: [Products] = []
     
-    
     @IBAction func onClickProdotto(_ sender: UIButton) {
         //guard let prodotto = self.data1?.products[0] else { return }
-       print(CartController.sharedCcontrol.quantityToCart, productsToCart)
+        print(CartController.sharedCcontrol.quantityToCart, (productsToCart.count - CartController.sharedCcontrol.quantityToCart + 1))
         CartManager.sharedCmanager.setProdotti(prodotti: productsToCart)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let alert = UIAlertController(title: "Hai selezionato la cella con id e quantità: ", message: data1?.products[indexPath.row].name, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Hai selezionato la cella con nome: ", message: data1?.products[indexPath.row].name, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -49,7 +48,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     var data1: CommercialActivity?
     var preferiti = [CommercialActivity]()
     var prodottiCarrello = [Products]()
-   
+    let productCheckTap: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,10 +73,16 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellProd", for: indexPath) as? ActCellProd, let item = self.data1?.products[indexPath.row] {
-            cell2.configure(item: item, actionPiu: { product in
-                self.productsToCart.append(product)
+            cell2.configure(item: item, actionPiu: {
+                
+                product in
+                if(CartController.sharedCcontrol.quantityToCart == 1){
+                    self.productsToCart.append(product)
+                    print("PIU: \(product)")
+                }
+                
             }, actionMeno: { product in
-                print("MENO: \(product)")
+               print("MENO: \(product)")
             })
             
             return cell2

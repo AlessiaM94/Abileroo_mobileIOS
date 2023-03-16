@@ -14,8 +14,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
   
     @IBOutlet weak var prodottiCart: UILabel!
-    
-    var cartProducts: [Int:Int] = [:]
+
     var quantityToCart: Int = Int()
     var prodottiCarrello = [Products]()
     static let shared4 = CartActivityCell()
