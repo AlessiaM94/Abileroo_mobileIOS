@@ -24,11 +24,16 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var cartButton: UIButton!
     
     var productsToCart: [Products] = []
+    var newQuantity: Int = Int()
     
     @IBAction func onClickProdotto(_ sender: UIButton) {
         //guard let prodotto = self.data1?.products[0] else { return }
-        print(CartController.sharedCcontrol.quantityToCart, (productsToCart.count - CartController.sharedCcontrol.quantityToCart + 1))
-        CartManager.sharedCmanager.setProdotti(prodotti: productsToCart)
+        print(CartController.sharedCcontrol.quantityToCart, productsToCart)
+        if(CartController.sharedCcontrol.quantityToCart != 0) {
+            CartManager.sharedCmanager.setProdotti(prodotti: productsToCart)
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -77,8 +82,12 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
                 
                 product in
                 if(CartController.sharedCcontrol.quantityToCart == 1){
-                    self.productsToCart.append(product)
-                    print("PIU: \(product)")
+                    if(item.id == product.id) {
+                        self.productsToCart.append(product)
+                        print("PIU: \(product)")
+                    }
+                    
+                    
                 }
                 
             }, actionMeno: { product in

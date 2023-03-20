@@ -28,6 +28,7 @@ class ActCellProd: UITableViewCell {
         CartController.sharedCcontrol.quantityToCart = Int(counter.description)!
         if let actionPiu = actionPiu, let product = product {
             actionPiu(product)
+            
         }
     }
     

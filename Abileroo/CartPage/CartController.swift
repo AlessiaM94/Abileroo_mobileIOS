@@ -18,6 +18,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var quantityToCart: Int = Int()
     var prodottiCarrello = [Products]()
     static let shared4 = CartActivityCell()
+    static let sharedActCellProd = ActCellProd()
     static let sharedCcontrol = CartController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let identifierCellCart = "cellCart"
         if let cellCart = tableView.dequeueReusableCell(withIdentifier: identifierCellCart, for: indexPath) as? CartActivityCell {
             cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
+            cellCart.descrizionePcart?.text = prodottiCarrello[indexPath.row].description
             cellCart.numQuantita?.text = String(CartController.sharedCcontrol.quantityToCart)
             return cellCart
             

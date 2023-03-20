@@ -10,6 +10,7 @@ import UIKit
 class CartActivityCell: UITableViewCell {
     @IBOutlet weak var nomeProdCart: UILabel!
     
+    @IBOutlet weak var descrizionePcart: UILabel!
     @IBOutlet weak var numQuantita: UILabel!
     
     
