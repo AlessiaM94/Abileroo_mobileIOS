@@ -31,6 +31,10 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
         print(CartController.sharedCcontrol.quantityToCart, productsToCart)
         if(CartController.sharedCcontrol.quantityToCart != 0) {
             CartManager.sharedCmanager.setProdotti(prodotti: productsToCart)
+        } else if (CartController.sharedCcontrol.quantityToCart == 0) {
+            let alert = UIAlertController(title: "Inserire una quantità! ", message: " Non puoi aggiungere una quantità pari a 0 nel carrello! ", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
         
@@ -81,7 +85,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
             cell2.configure(item: item, actionPiu: {
                 
                 product in
-                if(CartController.sharedCcontrol.quantityToCart == 1){
+                if(CartController.sharedCcontrol.quantityToCart == 1 && CartController.sharedCcontrol.quantityToCart != 0){
                     if(item.id == product.id) {
                         self.productsToCart.append(product)
                         print("PIU: \(product)")

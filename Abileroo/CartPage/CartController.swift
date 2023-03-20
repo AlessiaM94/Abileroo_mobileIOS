@@ -24,12 +24,16 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableViewCart.dataSource = self
         tableViewCart.delegate = self
+        tableViewCart.backgroundView = UIImageView(image: UIImage(named: "BG-Table.jpeg"))
         prodottiCart.font = UIFont(name: "Emithey Brush", size: 25)
         print("La quantità del prodotto è: ", CartController.sharedCcontrol.quantityToCart)
         self.tableViewCart.reloadData()
 
     }
     
+    @IBAction func acquista(_ sender: UIButton) {
+        
+    }
     @IBAction func deleteAllProd(_ sender: UIButton) {
         CartManager.sharedCmanager.deleteAllProdCart()
     }
@@ -54,6 +58,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
             cellCart.descrizionePcart?.text = prodottiCarrello[indexPath.row].description
             cellCart.numQuantita?.text = String(CartController.sharedCcontrol.quantityToCart)
+            cellCart.backgroundColor = UIColor.separator
             return cellCart
             
         }

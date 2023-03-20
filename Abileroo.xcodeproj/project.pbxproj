@@ -24,6 +24,8 @@
 		4D58E1C629AF71E100156F8B /* CartActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58E1C529AF71E100156F8B /* CartActivityCell.swift */; };
 		4D8C142629C08F55001CBBF2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C142529C08F55001CBBF2 /* DataManager.swift */; };
 		4D9713F829B09B790080D39D /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9713F729B09B790080D39D /* CartManager.swift */; };
+		4DAA989029C865A60067F08A /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA988F29C865A60067F08A /* BuyController.swift */; };
+		4DAA989229C867480067F08A /* CellPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA989129C867480067F08A /* CellPayment.swift */; };
 		4DACF02E299CFAE600F51C7E /* PreferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACF02D299CFAE500F51C7E /* PreferController.swift */; };
 		4DACF030299D20C800F51C7E /* ActivityPreferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACF02F299D20C800F51C7E /* ActivityPreferCell.swift */; };
 		4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB97117294B5EBA002FC89E /* ActCellProd.swift */; };
@@ -76,6 +78,8 @@
 		4D58E1C529AF71E100156F8B /* CartActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartActivityCell.swift; sourceTree = "<group>"; };
 		4D8C142529C08F55001CBBF2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D9713F729B09B790080D39D /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		4DAA988F29C865A60067F08A /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
+		4DAA989129C867480067F08A /* CellPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPayment.swift; sourceTree = "<group>"; };
 		4DACF02D299CFAE500F51C7E /* PreferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferController.swift; sourceTree = "<group>"; };
 		4DACF02F299D20C800F51C7E /* ActivityPreferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPreferCell.swift; sourceTree = "<group>"; };
 		4DB97117294B5EBA002FC89E /* ActCellProd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActCellProd.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				4D27B943293DFE7A000DDD39 /* Main.storyboard */,
 				4D27B946293DFE7C000DDD39 /* Assets.xcassets */,
 				4D8C142729C09008001CBBF2 /* FilesManager */,
+				4DAA988E29C862860067F08A /* BuyPage */,
 				4D58E1BE29AF67BB00156F8B /* CartPage */,
 				4DACF02C299CFABF00F51C7E /* PreferPage */,
 				4D51ED0C299BA2A900D6802A /* DetailPage */,
@@ -244,6 +249,15 @@
 				4DCD191429A4E2A20020797E /* PreferManager.swift */,
 			);
 			path = FilesManager;
+			sourceTree = "<group>";
+		};
+		4DAA988E29C862860067F08A /* BuyPage */ = {
+			isa = PBXGroup;
+			children = (
+				4DAA988F29C865A60067F08A /* BuyController.swift */,
+				4DAA989129C867480067F08A /* CellPayment.swift */,
+			);
+			path = BuyPage;
 			sourceTree = "<group>";
 		};
 		4DACF02C299CFABF00F51C7E /* PreferPage */ = {
@@ -495,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DAA989029C865A60067F08A /* BuyController.swift in Sources */,
 				4D58E1C629AF71E100156F8B /* CartActivityCell.swift in Sources */,
 				4D9713F829B09B790080D39D /* CartManager.swift in Sources */,
 				4D58E1C229AF6BF000156F8B /* CartController.swift in Sources */,
@@ -504,6 +519,7 @@
 				4DACF030299D20C800F51C7E /* ActivityPreferCell.swift in Sources */,
 				4D27B93E293DFE7A000DDD39 /* AppDelegate.swift in Sources */,
 				4D572D9E293F64E2005761D5 /* ActivityCell.swift in Sources */,
+				4DAA989229C867480067F08A /* CellPayment.swift in Sources */,
 				4D27B940293DFE7A000DDD39 /* SceneDelegate.swift in Sources */,
 				4D572DBF293F8509005761D5 /* DetailController.swift in Sources */,
 				4DB97118294B5EBA002FC89E /* ActCellProd.swift in Sources */,
