@@ -25,6 +25,7 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     
     var productsToCart: [Products] = []
     var newQuantity: Int = Int()
+    static let sharedDcontroller = DetailController()
     
     @IBAction func onClickProdotto(_ sender: UIButton) {
         //guard let prodotto = self.data1?.products[0] else { return }
@@ -57,7 +58,6 @@ class DetailController: UIViewController, UITableViewDataSource, UITableViewDele
     var data1: CommercialActivity?
     var preferiti = [CommercialActivity]()
     var prodottiCarrello = [Products]()
-    let productCheckTap: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

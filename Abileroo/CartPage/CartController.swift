@@ -15,6 +15,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var prodottiCart: UILabel!
 
+    var productsToBuyPage: [Products] = []
     var quantityToCart: Int = Int()
     var prodottiCarrello = [Products]()
     static let shared4 = CartActivityCell()
@@ -32,7 +33,12 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func acquista(_ sender: UIButton) {
-        
+        BuyManager.sharedBmanager.setProdBuy(buyProducts: productsToBuyPage)
+        print(productsToBuyPage)
+        for productBuy in productsToBuyPage {
+            self.productsToBuyPage.append(productBuy)
+            
+        }
     }
     @IBAction func deleteAllProd(_ sender: UIButton) {
         CartManager.sharedCmanager.deleteAllProdCart()

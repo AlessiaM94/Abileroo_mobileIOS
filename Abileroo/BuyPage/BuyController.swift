@@ -10,26 +10,45 @@ import UIKit
 class BuyController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    var productConf: [String] =  ["P.1", "P.2"]
+    var productConf: [String] =  ["P.1", "P.2", "P.3"]
+    var quantitàEffettiva: Double = Double()
+    var productPageBuy = [Products]()
+    
+    @IBOutlet weak var tableViewSell: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSell.dataSource = self
         tableViewSell.delegate = self
         tableViewSell.backgroundView = UIImageView(image: UIImage(named: "BG-Table.jpeg"))
+        quantitàEffettiva = Double(CartController.sharedCcontrol.quantityToCart)
+        self.tableViewSell.reloadData()
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        productPageBuy = CartManager.sharedCmanager.getProdottiAcquistati()
         self.tableViewSell.reloadData()
     }
     
-    @IBOutlet weak var tableViewSell: UITableView!
     
+    
+    // TABLE PRODOTTI PAGINA ACQUISTA
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productConf.count
+        return productPageBuy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell4 = tableView.dequeueReusableCell(withIdentifier: "CellPayment", for: indexPath) as? CellPayment {
-            cell4.backgroundColor = UIColor.separator
-            cell4.nameP.text = productConf[indexPath.row].description
+            let item = productPageBuy[indexPath.row]
+            let prezzoXquantita = ((item.price ?? 0.00) * quantitàEffettiva)
+            cell4.backgroundColor = UIColor.opaqueSeparator
+            cell4.quantitaBuy?.text = String(quantitàEffettiva) + " x"
+            cell4.namePbuy.text = item.name
+            cell4.prizeP.text = String(format: "%.2f", prezzoXquantita) + " €"
+            
             return cell4
         }
         return UITableViewCell()

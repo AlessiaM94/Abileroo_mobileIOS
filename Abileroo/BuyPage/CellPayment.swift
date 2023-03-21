@@ -8,8 +8,11 @@
 import UIKit
 class CellPayment: UITableViewCell {
     
-    @IBOutlet weak var nameP: UILabel!
+    @IBOutlet weak var quantitaBuy: UILabel!
     @IBOutlet weak var prizeP: UILabel!
+    
+    @IBOutlet weak var namePbuy: UILabel!
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
