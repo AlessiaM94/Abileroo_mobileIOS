@@ -15,7 +15,7 @@ class BuyManager {
         DataManager.sharedDmanager.getObject(type: [Products](), key: "objects3")
     }
     
-    func setProdBuy(buyProducts: [Products]) {
+    func setProductsBuy(buyProducts: [Products]) {
         let jsonEncoder = JSONEncoder()
         if let buyProducts = try? jsonEncoder.encode(buyProducts) {
             let defaults = UserDefaults.standard
@@ -25,5 +25,14 @@ class BuyManager {
             print("Non è stato possibile salvare il prodotto")
         }
     }
+    func setProdBuy(_ data2: Products) {
+        var prodottoAttuale = getProdBuy()
+        prodottoAttuale.append(data2)
+        setProductsBuy(buyProducts: prodottoAttuale)
+        }
+            
+        
+        
+    }
     
-}
+

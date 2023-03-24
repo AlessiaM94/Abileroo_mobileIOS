@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class CartController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -25,7 +26,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableViewCart.dataSource = self
         tableViewCart.delegate = self
-        tableViewCart.backgroundView = UIImageView(image: UIImage(named: "BG-Table.jpeg"))
+        tableViewCart.backgroundView = UIImageView(image: UIImage(named: "bgTable.jpeg"))
         prodottiCart.font = UIFont(name: "Emithey Brush", size: 25)
         print("La quantità del prodotto è: ", CartController.sharedCcontrol.quantityToCart)
         self.tableViewCart.reloadData()
@@ -33,18 +34,14 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func acquista(_ sender: UIButton) {
-        BuyManager.sharedBmanager.setProdBuy(buyProducts: productsToBuyPage)
-        print(productsToBuyPage)
-        for productBuy in productsToBuyPage {
-            self.productsToBuyPage.append(productBuy)
-            
-        }
+        //BuyManager.sharedBmanager.setProductsBuy(buyProducts: productsToBuyPage)
+        //print(productsToBuyPage)
+        
     }
     @IBAction func deleteAllProd(_ sender: UIButton) {
         CartManager.sharedCmanager.deleteAllProdCart()
     }
    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prodottiCarrello = CartManager.sharedCmanager.getProdottiAcquistati()
@@ -64,7 +61,6 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cellCart.nomeProdCart?.text = prodottiCarrello[indexPath.row].name
             cellCart.descrizionePcart?.text = prodottiCarrello[indexPath.row].description
             cellCart.numQuantita?.text = String(CartController.sharedCcontrol.quantityToCart)
-            cellCart.backgroundColor = UIColor.separator
             return cellCart
             
         }
